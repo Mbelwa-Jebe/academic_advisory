@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">fyptest</string>
+    <string name="login">LOGIN</string>
+    <string name="title_activity_student_dashboard">StudentDashboard</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_advisor_dashboard">advisor_dashboard</string>
+    <string name="title_activity_appointment_page">AppointmentPage</string>
+</resources>
