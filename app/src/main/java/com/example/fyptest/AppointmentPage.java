@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -17,6 +18,9 @@ public class AppointmentPage extends AppCompatActivity {
     private AlertDialog dialog;
     private EditText requstinfo;
     private Button submitap;
+    //public TextView regnoap;
+    public String reg_no;
+
 
 
     @Override
@@ -35,6 +39,13 @@ public class AppointmentPage extends AppCompatActivity {
            createPopupDialog();
             }
         });
+
+        TextView userId = findViewById(R.id.regnoap);
+       Bundle bundle = getIntent().getExtras();
+       // String reg_no;
+     reg_no= bundle.getString("KEY_REGNO");
+       userId.setText(reg_no);
+
     }
     private void createPopupDialog(){
         dialogBuilder = new AlertDialog.Builder(this);
@@ -55,6 +66,8 @@ public class AppointmentPage extends AppCompatActivity {
                 }
 
                 private void submitapAppointment(View v) {
+
+
 
                 }
             });

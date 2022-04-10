@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class student_dashboard extends AppCompatActivity implements View.OnClickListener {
 
-
+public String reg_no;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +26,7 @@ public class student_dashboard extends AppCompatActivity implements View.OnClick
         ImageView messagesic = findViewById(R.id.messageic_id);
         ImageView faqsic = findViewById(R.id.faqsic_id);
         ImageView settingsic = findViewById(R.id.settingsic_id);
+       TextView userId = findViewById(R.id.userId);
 
         menuic.setOnClickListener(this);
         advisoric.setOnClickListener(this);
@@ -35,12 +37,23 @@ public class student_dashboard extends AppCompatActivity implements View.OnClick
         settingsic.setOnClickListener(this);
 
 
+        Bundle bundle = getIntent().getExtras();
+        reg_no= bundle.getString("KEY_REGNO");
+        userId.setText(reg_no);
+
 
     }
+
 
     @SuppressLint("ShowToast")
     @Override
     public void onClick(View v) {
+      Bundle bundle = getIntent().getExtras();
+       // String reg_no;
+      reg_no= bundle.getString("KEY_REGNO");
+
+
+
         switch (v.getId()){
 
             case R.id.menuic_id:
@@ -59,7 +72,10 @@ public class student_dashboard extends AppCompatActivity implements View.OnClick
                // Toast.makeText(this,"appointment",Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(student_dashboard.this, AppointmentPage.class);
-                student_dashboard.this.startActivity(intent);
+              //  Bundle bundle1 = new Bundle();
+               // bundle1.putString("KEY_REGNO1",reg_no);
+               intent.putExtras(bundle);
+                this.startActivity(intent);
 
                 break;
 

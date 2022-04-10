@@ -1,7 +1,6 @@
 package com.example.fyptest;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +19,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-import androidx.annotation.RequiresApi;
+import Model.user;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -42,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btlogin = findViewById(R.id.studentlogin);
         btlogin.setOnClickListener(this);
         advisorLogin = findViewById(R.id.advisorText);
+
+      user online_user = new user(etName.getText());
 
         advisorLogin.setOnClickListener(new View.OnClickListener() {
 
@@ -94,15 +95,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         public void openProfile(){
                            // Toast.makeText(MainActivity.this, "logged in", Toast.LENGTH_LONG).show();
 
-                              Intent intent = new Intent(MainActivity.this, student_dashboard.class);
-                           intent.putExtra(KEY_REGNO,registration_no);
-                           MainActivity.this.startActivity(intent);
+
+                            Intent intent = new Intent(MainActivity.this, student_dashboard.class);
+                           Bundle bundle = new Bundle();
+                           bundle.putString("KEY_REGNO",registration_no);
+                            intent.putExtras(bundle);
+                           this.startActivity(intent);
                         }
 
     @Override
     public void onClick(View v) {
         login();
     }
+
 }
 
 
