@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +25,7 @@ public String reg_no;
         ImageView messagesic = findViewById(R.id.messageic_id);
         ImageView faqsic = findViewById(R.id.faqsic_id);
         ImageView settingsic = findViewById(R.id.settingsic_id);
-       TextView userId = findViewById(R.id.userId);
+       //TextView userId = findViewById(R.id.userId);
 
         menuic.setOnClickListener(this);
         advisoric.setOnClickListener(this);
@@ -39,7 +38,7 @@ public String reg_no;
 
         Bundle bundle = getIntent().getExtras();
         reg_no= bundle.getString("KEY_REGNO");
-        userId.setText(reg_no);
+       // userId.setText(reg_no);
 
 
     }
@@ -62,6 +61,11 @@ public String reg_no;
 
             case R.id.advisoric_id:
                 Toast.makeText(this,"advisor",Toast.LENGTH_LONG).show();
+                Intent intent2 = new Intent(student_dashboard.this, AdvisorPage.class);
+                //  Bundle bundle1 = new Bundle();
+                // bundle1.putString("KEY_REGNO1",reg_no);
+                intent2.putExtras(bundle);
+                this.startActivity(intent2);
                 break;
 
             case R.id.reportic_id:

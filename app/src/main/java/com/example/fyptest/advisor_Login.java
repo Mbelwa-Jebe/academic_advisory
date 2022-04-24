@@ -1,13 +1,6 @@
 package com.example.fyptest;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +19,6 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class advisor_Login extends AppCompatActivity {
@@ -99,7 +91,10 @@ public class advisor_Login extends AppCompatActivity {
             // Toast.makeText(MainActivity.this, "logged in", Toast.LENGTH_LONG).show();
 
             Intent intent = new Intent(advisor_Login.this, advisor_dashboard.class);
-            intent.putExtra(KEY_ADVISOR_ID, advisor_id);
+           // intent.putExtra(KEY_ADVISOR_ID, advisor_id);
+            Bundle bundle = new Bundle();
+            bundle.putString("KEY_REGNO",advisor_id);
+            intent.putExtras(bundle);
             advisor_Login.this.startActivity(intent);
         }
 

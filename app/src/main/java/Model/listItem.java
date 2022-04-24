@@ -28,8 +28,6 @@ public class listItem {
 
 
 
-
-
     public listItem() {
         this.title = title;
         this.description = description;

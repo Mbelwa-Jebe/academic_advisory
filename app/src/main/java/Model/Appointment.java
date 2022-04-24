@@ -1,16 +1,40 @@
 package Model;
 
-public class  appointment {
-    private String request_info;
+public class  Appointment {
+    private String request_info,appointment_id;
     private String response;
     private String student_fname;
     private String student_lname;
-    private String advisor_fname;
-    private String advisor_lname;
+    private String advisor_fname,student_id;
+    private String advisor_lname,advisor_id;
     private String timestamp;
 
     public String getRequest_info() {
         return request_info;
+    }
+
+    public String getAdvisor_id() {
+        return advisor_id;
+    }
+
+    public String getAppointment_id() {
+        return appointment_id;
+    }
+
+    public void setAppointment_id(String appointment_id) {
+        this.appointment_id = appointment_id;
+    }
+
+    public String getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(String student_id) {
+        this.student_id = student_id;
+    }
+
+    public void setAdvisor_id(String advisor_id) {
+        this.advisor_id = advisor_id;
     }
 
     public void setRequest_info(String request_info) {

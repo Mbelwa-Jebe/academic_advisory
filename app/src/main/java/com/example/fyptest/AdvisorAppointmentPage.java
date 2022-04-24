@@ -36,113 +36,127 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import static controller.ap_controller.getInstance;
 
-public class AppointmentPage extends AppCompatActivity {
+public class AdvisorAppointmentPage extends AppCompatActivity {
 
     private AlertDialog.Builder dialogBuilder;
     private AlertDialog dialog;
-    private EditText requstinfo;
+    private EditText requstinfo,student_id;
     private Button submitap;
     private RecyclerView recyclerView;
-    private ap_adapter ap_adapter;
+    private Adapter.ap_adapter ap_adapter;
     //public TextView regnoap;
-    public String registration_no,request_info,post_url1;
+    public String registration_no,request_info,post_url1,student_idtxt;
     private ap_data appointments;
     public static  final String KEY_REGNO="registration_no";
     public static final String KEY_REQUESTINFO="request_info";
+    public static  final String KEY_STUDENTID="student_idtxt";
+
 
     private List<Appointment> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_appointment_page);
+        setContentView(R.layout.activity_advisor_appointment_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+
+
+       /* fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
+
 
         recyclerView = (RecyclerView)findViewById(R.id.ap_recyclerview);
-        LinearLayoutManager manager = new LinearLayoutManager(AppointmentPage.this,LinearLayoutManager.VERTICAL,false);
+        LinearLayoutManager manager = new LinearLayoutManager(AdvisorAppointmentPage.this,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(true);
 
         getAppointment();
-
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                     //   .setAction("Action", null).show();
-           createPopupDialog();
+                  createPopupDialog();
             }
         });
 
-       // TextView userId = findViewById(R.id.regnoap);
-       Bundle bundle = getIntent().getExtras();
-       // String reg_no;
+        // TextView userId = findViewById(R.id.regnoap);
+        Bundle bundle = getIntent().getExtras();
+        // String reg_no;
         registration_no= bundle.getString("KEY_REGNO");
-     //  userId.setText(reg_no);
+        //  userId.setText(reg_no);
+
 
 
 
     }
+
     private void createPopupDialog(){
         dialogBuilder = new AlertDialog.Builder(this);
-        View view = getLayoutInflater().inflate(R.layout.popup_appointment,null);
-            requstinfo = (EditText) view.findViewById(R.id.requstinfo_id);
-            submitap = (Button) view.findViewById(R.id.ap_submit);
+        View view = getLayoutInflater().inflate(R.layout.advisor_popup_appointment,null);
+        requstinfo = (EditText) view.findViewById(R.id.requstinfo_id);
+        student_id = (EditText) view.findViewById(R.id.student_id);
+        submitap = (Button) view.findViewById(R.id.ap_submit);
 
-            dialogBuilder.setView(view);
-            dialog = dialogBuilder.create();
-            dialog.show();
+        dialogBuilder.setView(view);
+        dialog = dialogBuilder.create();
+        dialog.show();
 
-            submitap.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        submitap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                    submitapAppointment(v);
+                submitapAppointment(v);
 
-                }
+            }
 
-                private void submitapAppointment(View v) {
-            request_info = requstinfo.getText().toString().trim();
+            private void submitapAppointment(View v) {
+                request_info = requstinfo.getText().toString().trim();
+                student_idtxt = student_id.getText().toString().trim();
 
 
-                    post_url1 ="http://192.168.137.1:88/AcademicAdvisor/insertap1.php";
-                    StringRequest stringRequest1 = new StringRequest(Request.Method.POST, post_url1, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-                            if (response.trim().equals("success")) {
-                                Toast.makeText(AppointmentPage.this, response, Toast.LENGTH_LONG).show();
+                post_url1 ="http://192.168.137.1:88/AcademicAdvisor/advisor_insertap1.php";
+                StringRequest stringRequest2 = new StringRequest(Request.Method.POST, post_url1, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (response.trim().equals("success")) {
+                            Toast.makeText(AdvisorAppointmentPage.this, response, Toast.LENGTH_LONG).show();
 
-                            } else {
-                                Toast.makeText(AppointmentPage.this, "error", Toast.LENGTH_LONG).show();
-                            }
-
-                        }
-                    },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-
-                                }
-                            }
-                    )
-                    {
-                        @Override
-                        protected Map<String, String> getParams()throws AuthFailureError {
-                            Map<String,String> map = new HashMap<>();
-                            map.put(KEY_REGNO,registration_no);
-                            map.put(KEY_REQUESTINFO,request_info);
-                            return map;
+                        } else {
+                            Toast.makeText(AdvisorAppointmentPage.this, "error", Toast.LENGTH_LONG).show();
                         }
 
-                    };
-                    RequestQueue requestQueue1 = Volley.newRequestQueue(getApplicationContext());
-                    requestQueue1.add(stringRequest1);
+                    }
+                },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+
+                            }
+                        }
+                )
+                {
+                    @Override
+                    protected Map<String, String> getParams()throws AuthFailureError {
+                        Map<String,String> map = new HashMap<>();
+                        map.put(KEY_REGNO,registration_no);
+                        map.put(KEY_REQUESTINFO,request_info);
+                        map.put(KEY_STUDENTID,student_idtxt);
+                        return map;
+                    }
+
+                };
+                RequestQueue requestQueue2 = Volley.newRequestQueue(getApplicationContext());
+                requestQueue2.add(stringRequest2);
 
 
-                }
-            });
+            }
+        });
     }
 
 
@@ -181,7 +195,7 @@ public class AppointmentPage extends AppCompatActivity {
 
                     }
 
-                    ap_adapter = new ap_adapter(AppointmentPage.this,list);
+                    ap_adapter = new ap_adapter(AdvisorAppointmentPage.this,list);
                     recyclerView.setAdapter(ap_adapter);
 
 

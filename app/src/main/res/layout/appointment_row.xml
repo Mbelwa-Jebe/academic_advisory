@@ -11,7 +11,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
         android:elevation="12dp"
          >
@@ -67,24 +67,25 @@
             <TableRow
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="15dp"
-                android:layout_alignBottom="@id/ap_status"
+                android:layout_alignBottom="@id/ap_response"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageButton
                     android:id="@+id/editap"
-                    android:layout_width="30dp"
+                    android:layout_width="wrap_content"
                     android:layout_marginRight="15dp"
-                    android:layout_height="30dp"
-                    android:background="@android:drawable/ic_menu_edit" />
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:src="@android:drawable/ic_menu_edit" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/deleteap"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@android:drawable/ic_delete"
-                    android:checkable="false"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white"
+                    android:src="@android:drawable/ic_delete"
                      />
 
             </TableRow>
