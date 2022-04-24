@@ -3,17 +3,15 @@ require_once 'config.php';
 class API {
     function select(){
         $db = new Connect;
-        $appointments = array();
-        $data = $db->prepare('SELECT * FROM appointments,advisors,students GROUP BY appointment_id');
+        $reports = array();
+        $data = $db->prepare('SELECT * FROM consultations,advisors,students GROUP BY consultation_id');
         $data->execute();
 
         while($OutputData = $data->fetch(PDO::FETCH_ASSOC)){
 
-            array_push($appointments,array(
+            array_push($reports,array(
 
-                'appointment_id' => $OutputData['appointment_id'],
-                    'request_info' => $OutputData['request_info'],
-                    'response' => $OutputData['response'],
+                'consultation_id' => $OutputData['consultation_id'],
                     'student_id' => $OutputData['student_id'],
     
                     'student_fname' => $OutputData['student_fname'],
@@ -23,14 +21,14 @@ class API {
                     'advisor_lname' => $OutputData['advisor_lname'],
     
                     'advisor_id' => $OutputData['advisor_id'],
-                    'time_stamp' => $OutputData['timestamp']
+                    'report_date' => $OutputData['report_date']
             ));
        
         }
 
-       $appointments = [ 'appointments'=> $appointments];
+       $reports = [ 'reports'=> $reports];
 
-        echo  json_encode($appointments,JSON_PRETTY_PRINT,JSON_FORCE_OBJECT);
+        echo  json_encode($reports,JSON_PRETTY_PRINT,JSON_FORCE_OBJECT);
     }
 
 }
