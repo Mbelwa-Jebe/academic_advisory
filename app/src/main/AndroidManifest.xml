@@ -13,11 +13,15 @@
         <activity
             android:name=".AdvisorAppointmentPage"
             android:label="@string/title_activity_advisor_appointment_page"
-            android:theme="@style/Theme.Fyptest.NoActionBar"></activity>
-        <activity android:name=".AdvisorPage" />
+            android:theme="@style/Theme.Fyptest.NoActionBar" />
+        <activity android:name=".Student_AdvisorPage" />
         <activity
             android:name=".AppointmentPage"
             android:label="@string/title_activity_appointment_page"
+            android:theme="@style/Theme.Fyptest.NoActionBar" />
+        <activity
+            android:name=".Advisor_students_Page"
+            android:label="Advisor_students_Page"
             android:theme="@style/Theme.Fyptest.NoActionBar" />
         <activity
             android:name=".advisor_dashboard"
@@ -39,8 +43,8 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

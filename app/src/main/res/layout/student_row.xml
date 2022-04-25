@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/popup_id"
     android:orientation="vertical"
     tools:ignore="MissingClass">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content" >
 
         <RelativeLayout
             android:padding="25dp"
@@ -97,7 +97,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.122"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="75dp" />
+                    tools:layout_editor_absoluteY="75dp"
+                    tools:ignore="MissingConstraints" />
 
                 <TextView
                     android:id="@+id/program_info"
@@ -107,7 +108,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.136"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="97dp" />
+                    tools:layout_editor_absoluteY="97dp"
+                    tools:ignore="MissingConstraints" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 

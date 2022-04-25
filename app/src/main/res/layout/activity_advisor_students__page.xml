@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Student_AdvisorPage">
+    tools:context=".Advisor_students_Page">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ad_recyclerview"
+        android:id="@+id/st_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/appBar"
-        android:layout_below="@+id/appBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 

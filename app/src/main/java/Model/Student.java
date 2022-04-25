@@ -1,10 +1,19 @@
 package Model;
 
-public class student {
+public class Student {
     private String registration_no;
     private String student_fname;
     private String student_lname;
     private String programme;
+    private String advisor_id;
+
+    public String getAdvisor_id() {
+        return advisor_id;
+    }
+
+    public void setAdvisor_id(String advisor_id) {
+        this.advisor_id = advisor_id;
+    }
 
     public String getRegistration_no() {
         return registration_no;

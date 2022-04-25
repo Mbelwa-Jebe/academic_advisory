@@ -68,8 +68,8 @@ public class advisor_dashboard extends AppCompatActivity {
                 break;
 
             case R.id.advisoric_id:
-                Toast.makeText(this,"advisor",Toast.LENGTH_LONG).show();
-                Intent intent2 = new Intent(advisor_dashboard.this, AdvisorPage.class);
+                Toast.makeText(this,"students",Toast.LENGTH_LONG).show();
+                Intent intent2 = new Intent(advisor_dashboard.this, Advisor_students_Page.class);
                 //  Bundle bundle1 = new Bundle();
                 // bundle1.putString("KEY_REGNO1",reg_no);
                 intent2.putExtras(bundle);
