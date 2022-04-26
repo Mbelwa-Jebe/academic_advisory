@@ -72,13 +72,13 @@ public class ap_adapter extends RecyclerView.Adapter<ap_adapter.ViewHolder> {
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-                     ap_info = itemView.findViewById(R.id.ap_info);
-                     ap_response = itemView.findViewById(R.id.ap_response);
-                     ap_advisor = itemView.findViewById(R.id.ap_advisor);
+                     ap_info = itemView.findViewById(R.id.report_studentlname);
+                     ap_response = itemView.findViewById(R.id.report_studentid);
+                     ap_advisor = itemView.findViewById(R.id.report_studentfname);
                      ap_time = itemView.findViewById(R.id.ap_date);
 
-                     editBtn = itemView.findViewById(R.id.editap);
-                     deleteBtn = itemView.findViewById(R.id.deleteap);
+                     editBtn = itemView.findViewById(R.id.edit_report);
+                     deleteBtn = itemView.findViewById(R.id.delete_report);
         }
     }
 }

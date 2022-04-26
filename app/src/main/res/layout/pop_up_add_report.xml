@@ -19,28 +19,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:id="@+id/ap_tittle"
-                android:text="Enter Request Info"
+                android:text="Student Report"
                 android:textSize="18sp"
                 android:layout_centerHorizontal="true"
                 android:layout_height="wrap_content"/>
 
             <EditText
-                android:id="@+id/requstinfo_id"
+                android:id="@+id/report_stdntid"
                 android:layout_below="@id/ap_tittle"
                 android:layout_width="match_parent"
-                android:hint="Request information"
+                android:hint="Student Registration_no"
                 android:layout_height="wrap_content"/>
 
             <EditText
-                android:id="@+id/student_id"
-                android:layout_below="@id/requstinfo_id"
+                android:id="@+id/report_info"
+                android:layout_below="@id/report_stdntid"
                 android:layout_width="match_parent"
-                android:hint="Student ID"
-                android:layout_height="wrap_content"/>
+                android:hint="Write your Report here"
+                android:layout_height="200dp"/>
 
             <Button
                 android:id="@+id/report_submit"
-                android:layout_below="@id/student_id"
+                android:layout_below="@id/report_info"
                 android:text="SUBMIT"
                 android:layout_marginTop="9dp"
                 android:background="@color/card4"

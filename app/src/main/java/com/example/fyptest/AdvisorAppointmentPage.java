@@ -101,7 +101,7 @@ public class AdvisorAppointmentPage extends AppCompatActivity {
         View view = getLayoutInflater().inflate(R.layout.advisor_popup_appointment,null);
         requstinfo = (EditText) view.findViewById(R.id.requstinfo_id);
         student_id = (EditText) view.findViewById(R.id.student_id);
-        submitap = (Button) view.findViewById(R.id.ap_submit);
+        submitap = (Button) view.findViewById(R.id.report_submit);
 
         dialogBuilder.setView(view);
         dialog = dialogBuilder.create();
@@ -126,6 +126,7 @@ public class AdvisorAppointmentPage extends AppCompatActivity {
                     public void onResponse(String response) {
                         if (response.trim().equals("success")) {
                             Toast.makeText(AdvisorAppointmentPage.this, response, Toast.LENGTH_LONG).show();
+                            dialog.dismiss();
 
                         } else {
                             Toast.makeText(AdvisorAppointmentPage.this, "error", Toast.LENGTH_LONG).show();

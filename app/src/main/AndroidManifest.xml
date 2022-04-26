@@ -10,6 +10,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fyptest">
+        <activity android:name=".Student_Report_Page"></activity>
+        <activity
+            android:name=".Advisor_Report_Page"
+            android:label="@string/title_activity_advisor__report__page"
+            android:theme="@style/Theme.Fyptest.NoActionBar" />
         <activity
             android:name=".AdvisorAppointmentPage"
             android:label="@string/title_activity_advisor_appointment_page"

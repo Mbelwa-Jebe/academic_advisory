@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"/>
 
             <Button
-                android:id="@+id/ap_submit"
+                android:id="@+id/report_submit"
                 android:layout_below="@id/requstinfo_id"
                 android:text="SUBMIT"
                 android:layout_marginTop="9dp"

@@ -58,7 +58,7 @@ public class AppointmentPage extends AppCompatActivity {
         setContentView(R.layout.activity_appointment_page);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+
 
         recyclerView = (RecyclerView)findViewById(R.id.ap_recyclerview);
         LinearLayoutManager manager = new LinearLayoutManager(AppointmentPage.this,LinearLayoutManager.VERTICAL,false);
@@ -67,6 +67,7 @@ public class AppointmentPage extends AppCompatActivity {
 
         getAppointment();
 
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +90,7 @@ public class AppointmentPage extends AppCompatActivity {
         dialogBuilder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.popup_appointment,null);
             requstinfo = (EditText) view.findViewById(R.id.requstinfo_id);
-            submitap = (Button) view.findViewById(R.id.ap_submit);
+            submitap = (Button) view.findViewById(R.id.report_submit);
 
             dialogBuilder.setView(view);
             dialog = dialogBuilder.create();
@@ -113,6 +114,7 @@ public class AppointmentPage extends AppCompatActivity {
                         public void onResponse(String response) {
                             if (response.trim().equals("success")) {
                                 Toast.makeText(AppointmentPage.this, response, Toast.LENGTH_LONG).show();
+                                dialog.dismiss();
 
                             } else {
                                 Toast.makeText(AppointmentPage.this, "error", Toast.LENGTH_LONG).show();

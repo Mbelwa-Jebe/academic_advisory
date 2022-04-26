@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
         android:elevation="12dp"
-         >
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,7 +23,7 @@
 
 
             <TextView
-                android:id="@+id/ap_date"
+                android:id="@+id/ad_report_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/card4"
@@ -34,40 +34,53 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/report_studentfname"
+                android:id="@+id/ad_report_studentfname"
                 android:paddingTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/ap_date"
+                android:layout_below="@id/ad_report_date"
                 android:gravity="center_horizontal"
                 android:text="hello2"
                 android:textAlignment="center" />
 
 
             <TextView
-                android:id="@+id/report_studentlname"
+                android:id="@+id/ad_report_studentlname"
                 android:paddingTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/report_studentfname"
+                android:layout_below="@id/ad_report_studentfname"
                 android:gravity="center_horizontal"
                 android:text="hello2"
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/report_studentid"
+                android:id="@+id/ad_report_studentid"
                 android:paddingTop="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/report_studentlname"
+                android:layout_below="@id/ad_report_studentlname"
                 android:gravity="center_horizontal"
                 android:text="hello2"
                 android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/ad_report"
+                android:layout_width="200dp"
+                android:layout_height="104dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="35dp"
+                android:layout_toRightOf="@id/ad_report_studentid"
+                android:gravity="center"
+                android:text="TextView" />
 
             <TableRow
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="15dp"
-                android:layout_alignBottom="@id/report_studentid"
+                android:layout_alignBottom="@id/ad_report"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -75,18 +88,17 @@
                 <ImageButton
                     android:id="@+id/edit_report"
                     android:layout_width="wrap_content"
+                    android:layout_height="35dp"
                     android:layout_marginRight="15dp"
-                    android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimaryDark"
                     android:src="@android:drawable/ic_menu_edit" />
 
                 <ImageButton
                     android:id="@+id/delete_report"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:backgroundTint="@color/white"
-                    android:src="@android:drawable/ic_delete"
-                     />
+                    android:src="@android:drawable/ic_delete" />
 
             </TableRow>
 

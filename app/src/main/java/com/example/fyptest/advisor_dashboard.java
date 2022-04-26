@@ -2,6 +2,7 @@ package com.example.fyptest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,7 +19,6 @@ public class advisor_dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_advisor_dashboard);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
        /* FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +27,10 @@ public class advisor_dashboard extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+
+        Log.e("advisor_dashboard","info");
+        Log.v("advisor_dashboard","info");
+        Log.i("advisor_dashboard","info");
 
         ImageView menuic = findViewById(R.id.menuic_id);
         ImageView advisoric = findViewById(R.id.advisoric_id);
@@ -78,6 +82,12 @@ public class advisor_dashboard extends AppCompatActivity {
 
             case R.id.reportic_id:
                 Toast.makeText(this,"report",Toast.LENGTH_LONG).show();
+                Intent intent3 = new Intent(this, Advisor_Report_Page.class);
+                // Bundle bundle1 = new Bundle();
+                // bundle1.putString("KEY_REGNO1",reg_no);
+                intent3.putExtras(bundle);
+                this.startActivity(intent3);
+
                 break;
 
             case R.id.appointmentic_id:

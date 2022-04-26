@@ -27,6 +27,7 @@ public class Student_AdvisorPage extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Adapter.Advisor_adapter advisor_adapter;
     private List<Advisor> list;
+    public String registration_no;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,10 @@ public class Student_AdvisorPage extends AppCompatActivity {
         LinearLayoutManager manager = new LinearLayoutManager(Student_AdvisorPage.this,LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(manager);
         recyclerView.setHasFixedSize(true);
+        Bundle bundle = getIntent().getExtras();
+        // String reg_no;
+        registration_no= bundle.getString("KEY_REGNO");
+
 
         getAdvisors();
 
@@ -58,10 +63,10 @@ public class Student_AdvisorPage extends AppCompatActivity {
                         advisor.setAdvisor_id(advObject.getString("advisor_id"));
                         advisor.setAdvisor_office(advObject.getString("advisor_office"));
                         advisor.setAdvisor_rank(advObject.getString("advisor_rank"));
-                       // if(registration_no.equals(appoint.getStudent_id())){
-                        //    list.add(advisor);
-                       // }
-                        list.add(advisor);
+                      //  if(registration_no.equals(appoint.getStudent_id())){
+                      //     list.add(advisor);
+                    //   }
+                       list.add(advisor);
 
                     }
                     advisor_adapter = new Advisor_adapter(Student_AdvisorPage.this,list);

@@ -70,6 +70,11 @@ public String reg_no;
 
             case R.id.reportic_id:
                 Toast.makeText(this,"report",Toast.LENGTH_LONG).show();
+                Intent intent4 = new Intent(this, Student_Report_Page.class);
+                // Bundle bundle1 = new Bundle();
+                // bundle1.putString("KEY_REGNO1",reg_no);
+                intent4.putExtras(bundle);
+                this.startActivity(intent4);
                 break;
 
             case R.id.appointmentic_id:
