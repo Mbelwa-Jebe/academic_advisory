@@ -21,7 +21,7 @@ class API {
        
         }
 
-       $advisors = [ 'reports'=> $advisors];
+       $advisors = [ 'advisors'=> $advisors];
 
         echo  json_encode($advisors,JSON_PRETTY_PRINT,JSON_FORCE_OBJECT);
     }

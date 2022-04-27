@@ -15,6 +15,7 @@ class API {
                     'student_fname' => $OutputData['student_fname'],
                     'student_lname' => $OutputData['student_lname'],
                     'programme' => $OutputData['programme'],
+                    'advisor_id' => $OutputData['advisor_id'],
             ));
        
         }
